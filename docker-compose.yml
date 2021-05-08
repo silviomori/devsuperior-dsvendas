@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db_hr_user:
+    container_name: dsvendas-pg12
+    image: postgres:12-alpine
+    networks:
+      - dsvendas-net
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 1234567
+      POSTGRES_DB: postgres
+  pgadmin4:
+    container_name: dsvendas-pgadmin4
+    image: dpage/pgadmin4
+    networks:
+      - dsvendas-net
+    ports:
+      - "80:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: e@mail.com
+      PGADMIN_DEFAULT_PASSWORD: 123
+
+networks:
+  dsvendas-net:
+    driver: bridge
