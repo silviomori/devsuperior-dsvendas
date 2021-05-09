@@ -1,10 +1,24 @@
+import Footer from "components/Footer";
+import NavBar from "components/NavBar";
+import { Link } from "react-router-dom";
+
 const Home = () => {
     return (
-        <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow-sm">
+        <>
+            <NavBar />
             <div className="container">
-                <h1>Home Page</h1>
+                <div className="jumbotron bg-transparent">
+                    <h1 className="display-4">DSVendas</h1>
+                    <p className="lead">Analyze sales performance from different perspectives</p>
+                    <hr />
+                    <p>This application consists of displaying a dashboard from data provided by a back end built with Spring Boot.</p>
+                    <Link className="btn btn-primary btn-lg" to="/dashboard">
+                        Open dashboard
+                    </Link>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }
 
